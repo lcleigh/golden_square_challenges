@@ -12,4 +12,13 @@ RSpec.describe "task_tracker method" do
         expect(result).to eq "This text does not contain a #TODO item." 
     end
 
+    it "for a string including a #TODO item it returns the correct message" do
+        result = task_tracker("hello #TODO clean the house")
+        expect(result).to eq "This text contains a #TODO item." 
+    end
+    
+    it "for a string including a #todo item it returns the correct message" do
+        result = task_tracker("hello #todo wash the dishes")
+        expect(result).to eq "This text contains a #TODO item." 
+    end
 end
