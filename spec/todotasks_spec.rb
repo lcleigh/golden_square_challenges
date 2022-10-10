@@ -17,13 +17,15 @@ RSpec.describe Todotasks do
 
     # 3)
     it "returns a list of 2 tasks when 2 tasks are added" do
+        todotasks = Todotasks.new
         todotasks.add_task("hoover")
         todotasks.add_task("wash up")
         expect(todotasks.list_tasks).to eq "To Do: hoover, wash up"
     end
 
     # 4)
-    xit "returns correct list when2 tasks are added and one is removed" do
+    it "returns correct list when2 tasks are added and one is removed" do
+        todotasks = Todotasks.new
         todotasks.add_task("hoover")
         todotasks.add_task("wash up")
         todotasks.complete_task("hoover")
@@ -31,7 +33,8 @@ RSpec.describe Todotasks do
     end
 
     # 5)
-    xit "does not add duplictes to the list" do
+    it "does not add duplictes to the list" do
+        todotasks = Todotasks.new
         todotasks.add_task("hoover")
         todotasks.add_task("hoover")
         todotasks.add_task("wash up")
@@ -39,7 +42,8 @@ RSpec.describe Todotasks do
     end
 
     # 6)
-    xit "returns a message saying no tasks when 2 tasks are added and both completed" do
+    it "returns a message saying no tasks when 2 tasks are added and both completed" do
+        todotasks = Todotasks.new
         todotasks.add_task("hoover")
         todotasks.add_task("wash up")
         todotasks.complete_task("hoover")
@@ -48,7 +52,7 @@ RSpec.describe Todotasks do
     end
 
     # 7)
-    xit "returns a message saying the task is no on list when asked to complete a task not added to list" do
+    it "returns a message saying the task is no on list when asked to complete a task not added to list" do
         todotasks = Todotasks.new
         todotasks.add_task("dusting")
         expect(todotasks.complete_task("clean")).to eq "This task is not on your list."
