@@ -29,4 +29,12 @@ RSpec.describe DiaryEntry2 do
         diary_entry_1.count_words
         expect(diary_entry_1.reading_time(2)).to eq 4 
     end
+
+    context "an empty entry is made" do
+        it "returns an error message when trying to work out reading time" do
+            diary_entry_1 = DiaryEntry2.new("", "")
+            diary_entry_1.count_words
+            expect(diary_entry_1.reading_time(2)).to eq "ERROR! You have not words to read."
+        end
+    end
 end
