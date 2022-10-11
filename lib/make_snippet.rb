@@ -8,4 +8,4 @@ def make_snippet(string)
         return string
     end
 end
-puts make_snippet("words word wordsss hello four more words")
+make_snippet("words word wordsss hello four more words")
