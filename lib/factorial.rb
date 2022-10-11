@@ -3,6 +3,7 @@ def factorial(n)
     product = 5
     #p "at the start product is #{product}"
     while n > 1
+        binding.irb
         #p "loop starts, n is #{n}"
         n -= 1
         #p "subtract 1 from n to get #{n}"
@@ -15,4 +16,6 @@ def factorial(n)
     product
     
 end
+
+puts factorial(5)
 
